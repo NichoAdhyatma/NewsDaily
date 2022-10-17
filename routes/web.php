@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewsController;
 use Inertia\Inertia;
@@ -39,6 +40,8 @@ Route::get('/dashboard', function () {
 Route::resource('/dashboard/mynews', DashboardController::class)->names(['index' => 'mynews']);
 
 Route::resource('/news', NewsController::class)->only(['index', 'show']);
+
+Route::resource('/comments', CommentController::class)->only(['show', 'store'])->names(['store' => 'postComment']);
 
 require __DIR__ . '/auth.php';
 

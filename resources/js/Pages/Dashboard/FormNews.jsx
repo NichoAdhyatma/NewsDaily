@@ -48,7 +48,7 @@ const FormNews = (props) => {
                     >
                         <BiArrowBack /> Back
                     </Link>
-                    <h2 className="font-semibold text-xl text-gray-800 leading-tight">
+                    <h2 className="font-semibold text-xl leading-tight">
                         {props.title}
                     </h2>
                 </div>
@@ -64,7 +64,7 @@ const FormNews = (props) => {
                             type="text"
                             name="title"
                             value={data.title}
-                            className="mt-1 block w-full"
+                            className="mt-1 block w-full bg-base-200"
                             autoComplete="title"
                             handleChange={onHandleChange}
                             placeholder="Title"
@@ -120,7 +120,7 @@ const FormNews = (props) => {
                             type="text"
                             name="body"
                             value={data.body}
-                            className="mt-1 w-full block"
+                            className="mt-1 w-full block bg-base-200"
                             autoComplete="body"
                             handleChange={onHandleChange}
                             placeholder="Text Body"

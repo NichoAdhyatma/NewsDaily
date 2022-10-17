@@ -10,7 +10,7 @@ use App\Models\News;
 class Comment extends Model
 {
     use HasFactory;
-    protected $guarded = ['id', 'news_id'];
+    protected $guarded = ['id'];
     protected $with = ['user'];
 
 

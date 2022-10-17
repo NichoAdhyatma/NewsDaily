@@ -56,13 +56,13 @@ const NewsTabel = ({ items, empty }) => {
                                     </div>
                                 </td>
                                 <td>
-                                    <span className="badge bg-pink-500 border-0 badge-sm">
+                                    <span className="badge badge-primary font-bold badge-sm">
                                         {item.category.name}
                                     </span>
                                 </td>
 
                                 <td>
-                                    <div className="flex flex-wrap bg-white">
+                                    <div className="flex flex-wrap">
                                         <input
                                             type="checkbox"
                                             id="my-modal-4"
@@ -77,7 +77,7 @@ const NewsTabel = ({ items, empty }) => {
                                                     comment: item.comment,
                                                 })
                                             }
-                                            className="btn btn-warning text-white btn-xs mr-1"
+                                            className="btn btn-warning btn-xs mr-1"
                                         >
                                             <FiEye />
                                         </label>
@@ -87,7 +87,7 @@ const NewsTabel = ({ items, empty }) => {
                                         >
                                             <button
                                                 onClick={() => setId(item.id)}
-                                                className="btn btn-primary text-white btn-xs mr-1"
+                                                className="btn btn-primary btn-xs mr-1"
                                             >
                                                 <HiPencilAlt />
                                             </button>
@@ -98,7 +98,7 @@ const NewsTabel = ({ items, empty }) => {
                                         >
                                             <button
                                                 onClick={() => setId(item.id)}
-                                                className="btn btn-error text-white btn-xs"
+                                                className="btn btn-error btn-xs"
                                             >
                                                 <BsFillTrashFill />
                                             </button>

@@ -1,8 +1,6 @@
-
+import { useForm, usePage } from "@inertiajs/inertia-react";
 import moment from "moment/moment";
 import { AiOutlineHistory, AiOutlineClose } from "react-icons/ai";
-import Button from "./Button";
-
 
 const Modal = (props) => {
     return (
@@ -21,14 +19,7 @@ const Modal = (props) => {
                 <p className="py-4 text-left">{props.body}</p>
                 <div className="flex flex-col gap-1">
                     <h4 className="font-bold">Comments</h4>
-                    <form action="#">
-                        <textarea
-                            className="textarea textarea-primary w-full"
-                            placeholder="Text your comment here.."
-                        ></textarea>
-                        <Button>Submit</Button>
-                        
-                    </form>
+
                     {props.comment.length ? (
                         props.comment.map((item, i) => {
                             return (

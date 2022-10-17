@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'verified']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -35,7 +39,17 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'body' => 'required'
+        ]);
+
+
+        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['news_id'] = $request['news_id'];
+
+        Comment::create($validatedData);
+
+        return back()->with('message', 'Success Add Comments !');
     }
 
     /**
@@ -46,7 +60,7 @@ class CommentController extends Controller
      */
     public function show(Comment $comment)
     {
-        //
+        return $comments = Comment::where('news_id', $comment['news_id'])->get();
     }
 
     /**

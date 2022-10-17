@@ -24,16 +24,12 @@ const MyNews = (props) => {
             auth={props.auth}
             errors={props.errors}
             header={
-                <div className="flex items-center gap-3">
-                    <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                        MyNews
-                    </h2>
-                </div>
+                <h2 className="font-semibold text-xl leading-tight">MyNews</h2>
             }
         >
             <Head title={props.title} />
             <div className="flex justify-center items-center py-5">
-                <Link href="mynews/create" className="badge badge-primary">
+                <Link href="mynews/create" className="badge badge-primary font-bold">
                     <AiOutlinePlus /> Add New News
                 </Link>
             </div>

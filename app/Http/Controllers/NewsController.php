@@ -14,9 +14,14 @@ class NewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request['key']) {
+            $news = News::latest()->where('title', 'like', '%'.$request['key'].'%')->get();
+            if ($news) return $news;
+        }
         $news = News::latest()->paginate(8)->withQueryString();
+
         return Inertia::render('News', [
             'title' => 'News Page',
             'desc' => 'Berita terkini kami sediakan untuk anda..',
@@ -32,7 +37,9 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        //
+        return Inertia::render('News/NewsDetail', [
+            'title' => 'Detail News',
+            'news' => $news
+        ]);
     }
-
 }

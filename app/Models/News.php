@@ -24,6 +24,6 @@ class News extends Model
     }
 
     public function comment() {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class)->latest();
     }
 }
